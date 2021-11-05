@@ -1,7 +1,9 @@
+import styles from '../styles/Home.module.css'
+
 export default function Home() {
   return (
-    <h1>
-      NextAuth
-    </h1>
+    <div className={styles.main}>
+      <h1>NextAuth</h1>
+    </div>
   )
 }
