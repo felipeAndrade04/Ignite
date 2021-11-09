@@ -29,12 +29,12 @@ export default function Posts({ posts }: PostsProps) {
       <main className={styles.container}>
         <div className={styles.posts}>
           {posts.map(post => (
-            <Link href={`/posts/${post.slug}`}>
-            <a key={post.slug} >
-              <time>{post.updatedAt}</time>
-              <strong>{post.title}</strong>
-              <p>{post.excerpt}</p>
-            </a>
+            <Link key={post.slug} href={`/posts/${post.slug}`}>
+              <a>
+                <time>{post.updatedAt}</time>
+                <strong>{post.title}</strong>
+                <p>{post.excerpt}</p>
+              </a>
             </Link>
           ))}
         </div>
@@ -65,8 +65,6 @@ export const getStaticProps: GetStaticProps = async () => {
       })
     }
   })
-
-  console.log(response)
 
   return {
     props: {
